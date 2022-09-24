@@ -1,0 +1,24 @@
+ <table class="table table-borderd">
+    <tr>
+        <th>Sr No</th>
+        <th>Employe Firstname</th>
+        <th>Employe lastname</th>
+        <th>Address</th>
+        <th>Contact</th>
+        <th>Viwe</th>
+        <th>Update</th>
+        <th>Delet</th>
+    </tr>
+    <tr *ngFor="let emp of employes ;let i=index;">
+        <td>{{i+1}}</td>
+        <td>{{emp.fname}}</td>
+        <td>{{emp.lname}}</td>
+        <td>{{emp.address}}</td>
+        <td>{{emp.contact}}</td>
+        <td><button class="btn bg-success"routerLink="viewemploye/{{emp.id}}">View</button></td>
+        <td><button class="btn bg-info"routerLink="update/{{emp.id}}">Update</button></td>
+        <td><button class="btn bg-danger"(click)="deleteemploye(emp.id)">Delete</button></td>
+        <td><button class="btn bg-danger"routerLink="update/{{emp.id}}">Post</button></td>
+    </tr>
+ </table>
+ <button class="bg-primary"routerLink="/employeform">Add Employe Details</button>

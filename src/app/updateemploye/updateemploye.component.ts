@@ -16,14 +16,14 @@ export class UpdateemployeComponent implements OnInit {
 
   ngOnInit(): void {
     this.empid=this.router.snapshot.paramMap.get('empid');
-    this.empdata.getviewemploye1(this.empid).subscribe(data=>{
+    this.empdat.getviewemploye1(this.empid).subscribe(data=>{
       this.empdata=data;
     }); 
     
-    }
+  }
   
   updateemployedata(){
-this.empdata.updateemploye(this.empid,this.empdata).subscribe(data=>{
+      this.empdat.updateemployee(this.empid,this.empdata).subscribe(data=>{
       this.routers.navigateByUrl('/empdata')
     })
       
